@@ -1,0 +1,44 @@
+-Cập nhật hệ thống
+sudo yum  install update -y
+Cài đặt docker
++ sudo yum install -y yum-utils
++ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
++ sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+Nếu có lỗi trong quá trình cài chạy lện sau
+sudo yum erase podman buildah
+
+Run docker image
++ sudo docker run -it -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 mysql:latest&
+ 
++ sudo docker run -it --rm -d --name tomcat9 -v /usr/deploy:/usr/local/tomcat/webapps -p 80:8080 tomcat:9.0&
+------------------------------------------
+- chạy docker: 
+sudo systemctl start docker
+- xem container: 
+sudo docker ps
+- run docker image: 
+sudo docker run -it --rm -d --name tomcat9 -v /usr/deploy:/usr/local/tomcat/webapps -p 80:8080 tomcat:9.0&
+
+sudo docker start mysql
+
+sudo docker stop mysql
+
+sudo docker stop tomcat9
+
+ip link show
+vi /etc/sysconfig/network-scripts/ifcfg-ens160
+
+//        host = '10.201.1.123'
+//        host = '192.168.1.123'
+//        user = 'root'
+//        password = '02112002'
+
+
+u: web
+p: 02112002
+
+ytb: 
+https://www.youtube.com/watch?v=7nzapaWSI1k&feature=youtu.be (centos)
+https://www.youtube.com/watch?v=cjkpsjmhzyE (gg)
